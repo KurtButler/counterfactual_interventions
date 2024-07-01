@@ -14,8 +14,8 @@ Tint = 40; % time of intervention start
 
 % Model parameters
 Q = 2;
-Btensor = 0.2*(rand(D,D,Q)-0.5);
-Btensor(:,:,1) = Btensor(:,:,1) + eye(D)*0.8;
+Btensor = 0.4*(rand(D,D,Q)-0.5);
+Btensor(:,:,1) = Btensor(:,:,1) + eye(D)*0.5;
 
 % Plotting parameters
 NoSTDs = 2; % Number of standard deviations in the confidence intervals
@@ -27,10 +27,10 @@ Xdiff = zeros(T,D);
 
 % Intervention moment
 u = zeros(T,D);
-u(:,i1) = 1 + randn(T,1);
+u(:,i1) = 10 + randn(T,1);
 Binttensor = Btensor;
 Binttensor(:,i1,:) = 0;
-Binttensor(i1,i1,1) = 0.9;
+% Binttensor(i1,i1,1) = 0.9;
 
 % Noise
 w = randn(T,D)*chol(C);
@@ -89,3 +89,6 @@ legend('Observed time series','Alternate universe',...
     'Prediction of counterfactual event','Location','best')
 
 
+
+%% Save figure
+saveas(gcf,'./figs/fig4.png');

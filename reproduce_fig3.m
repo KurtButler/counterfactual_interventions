@@ -130,3 +130,7 @@ set(gcf,'Position',[484 341 673 406])
 
 
 
+
+
+%% Save figure
+saveas(gcf,'./figs/fig3.png');
