@@ -15,6 +15,7 @@ Ttensor = zeros(D,D,K);
 for k = 1:K
     for q = 1:Q
         if k-q>0
+            % Only order 2 is coded right now.
             Ttensor(:,:,k) = Ttensor(:,:,k) + Ttensor(:,:,k-q)*Btensor(:,:,q);
         elseif k==q
             Ttensor(:,:,k) = Ttensor(:,:,k) + Btensor(:,:,q);
