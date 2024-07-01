@@ -10,7 +10,7 @@ TBA
 ## Citation
 If you use our code or results from this project in your academic work, please consider citing our paper:
 ```
-@article{butler2024joint,
+@article{butler2024counterfactual,
   title={On Counterfactual Interventions in Vector Autoregressive Models},
   author={Butler, Kurt and Iloska, Marija and Djuri{\'c}, Petar M},
   journal={arXiv preprint arXiv:2406.19573},
